@@ -9,7 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "BaseTarget.xcconfig"
-#include "../../Pods/Target Support Files/Pods-Moments/Pods-Moments.internal.xcconfig"
+#include "../Pods/Target Support Files/Pods-Moments/Pods-Moments.internal.xcconfig"
 
 PRODUCT_BUNDLE_NAME = $(inherited) β
 PRODUCT_BUNDLE_IDENTIFIER = com.samlaudev.cp13.moments.internal
