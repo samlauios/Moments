@@ -29,7 +29,8 @@ key_id = "F9Z3Q5FSJG"
 issuer_id = "69a6de86-9e10-47e3-e053-5b8c7c11a4d1"
 
 # Distribution config
-firebase_app_id = "1:1006072846935:ios:9fb558dba03e06efeea112"
+firebase_app_id = "1:72906421521:ios:a9020f4a882005dc8588b0"
+firebase_internal_group_name = "internal-testers"
 
 # Helper config
 swiftlint_config_file = app_name + "/.swiftlint.yml"
@@ -338,7 +339,7 @@ platform :ios do
     firebase_app_distribution(
       app: firebase_app_id,
       ipa_path: ipa_path,
-      groups: "internal-testers",
+      groups: firebase_internal_group_name,
       release_notes: "A new build for the Internal App",
       firebase_cli_token: ENV["FIREBASE_TOKEN"]
     )
