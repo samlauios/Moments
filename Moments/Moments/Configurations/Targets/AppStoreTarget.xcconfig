@@ -13,3 +13,4 @@
 
 PRODUCT_BUNDLE_NAME = $(inherited)
 PRODUCT_BUNDLE_IDENTIFIER = com.samlaudev.cp13.moments
+FIREBASE_CONFIG_FILENAME = GoogleService-Info-AppStore
