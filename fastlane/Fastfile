@@ -40,6 +40,9 @@ xcodeproj = app_name + "/" + app_name + ".xcodeproj"
 keychain_name = app_name + "AppKeychain"
 keychain_password = app_name
 ipa_path = app_name + ".ipa"
+development_profile_name = "match Development " + app_identifier_development
+internal_profile_name = "match AdHoc " + app_identifier_internal 
+app_store_profile_name = "match AppStore " + app_identifier_app_store
 
 default_platform(:ios)
 
@@ -270,6 +273,13 @@ platform :ios do
       password: keychain_password
     )
 
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: xcodeproj,
+      code_sign_identity: "iPhone Distribution",
+      bundle_identifier: app_identifier_internal,
+      profile_name: internal_profile_name)
+
     puts("Create an archive for internal testing")
     gym(
       workspace: workspace,
@@ -277,6 +287,13 @@ platform :ios do
       export_method: "ad-hoc",
       xcargs: "-allowProvisioningUpdates"
     )
+
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: xcodeproj,
+      code_sign_identity: "iPhone Developer",
+      bundle_identifier: app_identifier_development,
+      profile_name: development_profile_name)
 
     puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
   end
@@ -288,6 +305,13 @@ platform :ios do
       password: keychain_password
     )
 
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: xcodeproj,
+      code_sign_identity: "iPhone Distribution",
+      bundle_identifier: app_identifier_app_store,
+      profile_name: app_store_profile_name)
+
     puts("Create an archive for app store submission")
     gym(
       workspace: workspace,
@@ -295,6 +319,13 @@ platform :ios do
       export_method: "app-store",
       xcargs: "-allowProvisioningUpdates"
     )
+
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: xcodeproj,
+      code_sign_identity: "iPhone Developer",
+      bundle_identifier: app_identifier_development,
+      profile_name: development_profile_name)
 
     puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
   end
