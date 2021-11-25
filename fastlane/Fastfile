@@ -20,7 +20,7 @@ ENV["FASTLANE_HIDE_CHANGELOG"] = "1"
 app_name = "Moments"
 
 # Profile config
-git_url = "https://github.com/samlaudev/moments-codesign"
+git_url = "https://github.com/samlauios/moments-codesign"
 app_identifier_development = "com.samlaudev.cp13.moments.development"
 app_identifier_internal = "com.samlaudev.cp13.moments.internal"
 app_identifier_app_store = "com.samlaudev.cp13.moments"
