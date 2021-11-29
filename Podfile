@@ -40,7 +40,7 @@ end
 
 def test_pods
   pod 'Quick', '= 3.0.0'
-  pod 'Nimble', '= 9.0.0'
+  pod 'Nimble', '= 9.2.1'
   pod 'RxTest', '= 5.1.1'
   pod 'RxBlocking', '= 5.1.1'
 end
