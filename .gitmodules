@@ -1,0 +1,3 @@
+[submodule "Frameworks/DesignKit"]
+	path = Frameworks/DesignKit
+	url = https://github.com/samlauios/DesignKit

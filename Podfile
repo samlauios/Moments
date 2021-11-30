@@ -3,7 +3,7 @@ source 'https://cdn.cocoapods.org/'
 workspace './Moments.xcworkspace'
 project 'Moments/Moments.xcodeproj'
 
-platform :ios, '14.0'
+platform :ios, '14.1'
 use_frameworks!
 
 # ignore all warnings from all dependencies
@@ -35,7 +35,7 @@ def ui_pods
 end
 
 def internal_pods
-
+  pod 'DesignKit', :path => './Frameworks/DesignKit', :inhibit_warnings => false
 end
 
 def test_pods
