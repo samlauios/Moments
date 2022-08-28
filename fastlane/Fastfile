@@ -246,9 +246,9 @@ platform :ios do
   lane :add_device do |options|
     name = options[:name]
     udid = options[:udid]
+    api_key = get_app_store_connect_api_key
     
     # Add device to App Store Connect
-    api_key = get_app_store_connect_api_key
     register_device(
       name: name,
       udid: udid,
@@ -257,6 +257,16 @@ platform :ios do
     )
 
     # Update profiles to Git private repo
+    match(
+      type: "development",
+      force: true,
+      storage_mode: "git",
+      git_url: git_url,
+      app_identifier: app_identifier_development,
+      team_id: team_id,
+      api_key: api_key 
+    )
+
     match(
       type: "adhoc",
       force: true,
