@@ -8,8 +8,8 @@ if [[ ! -x "$(command -v brew)" ]]; then
 fi
 
 # jenkins 
-if ! brew list | grep "jenkins"; then
-    brew install jenkins
+if ! brew list | grep "jenkins-lts"; then
+    brew install jenkins-lts
 fi
 
 # rbenv
