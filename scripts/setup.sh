@@ -2,6 +2,16 @@
 
 set -ueo pipefail
 
+# homebrew
+if [[ ! -x "$(command -v brew)" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# rbenv
+if ! brew list | grep "rbenv"; then
+    brew install rbenv ruby-build
+fi
+
 # Install ruby using rbenv
 ruby_version=$(cat .ruby-version)
 if [[ ! -d "$HOME/.rbenv/versions/$ruby_version" ]]; then
