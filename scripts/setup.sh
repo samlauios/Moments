@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-
+# set -x
 set -ueo pipefail
 
 # homebrew
 if [[ ! -x "$(command -v brew)" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# jenkins 
+if ! brew list | grep "jenkins"; then
+    brew install jenkins
 fi
 
 # rbenv
