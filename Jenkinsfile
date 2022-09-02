@@ -15,6 +15,8 @@ pipeline {
     stages {
         stage('install') {
             steps {
+                sh 'source ~/.env'
+                sh 'rbenv local $(cat .ruby-version)'
                 sh 'bundle install'
                 sh 'bundle exec pod install'
             }
