@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CI_BUILD_NUMER = ${env.BUILD_NUMBER}
+        CI_BUILD_NUMER = "${env.BUILD_NUMBER}"
 
         GITHUB_USERNAME = credentials('github-username')
         GITHUB_API_TOKEN = credentials('github-api-token') 
@@ -44,7 +44,7 @@ pipeline {
 
             }
         }
-        
+
         stage('archive, sign and deploy production app') {
             when {
                 branch 'release'
