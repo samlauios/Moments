@@ -1,6 +1,9 @@
 pipeline {
     agent any
     environment {
+        http_proxy = "http://127.0.0.1:1087"
+        https_proxy= "http://127.0.0.1:1087"
+
         CI_BUILD_NUMER = "${env.BUILD_NUMBER}"
 
         GITHUB_USERNAME = credentials('github-username')
