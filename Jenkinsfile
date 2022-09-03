@@ -15,7 +15,13 @@ pipeline {
     stages {
         stage('install') {
             steps {
-                sh 'eval "$(rbenv init -)"'
+                sh '''
+                #!/bin/bash
+                export PATH=$PATH:/usr/local/bin:$HOME/.rbenv/shims
+                eval "$(rbenv init -)"
+                rbenv local
+                rbenv rehash
+                '''
                 sh 'bundle install'
                 sh 'bundle exec pod install'
             }
