@@ -9,14 +9,13 @@ pipeline {
 
         CI_BUILD_NUMER = "${env.BUILD_NUMBER}"
 
-        GITHUB_USERNAME = credentials('github-username')
-        GITHUB_API_TOKEN = credentials('github-api-token') 
+        MATCH_GIT_BASIC_AUTHORIZATION = credentials('match_git_basic_authorization')
         MATCH_PASSWORD = credentials('match-password')
         APP_STORE_CONNECT_API_CONTENT = credentials('app-store-connect-api-content') 
         FIREBASE_TOKEN = credentials('firebase-token')
     }
     stages {
-        stage('install') {
+        stage('install tools') {
             steps {
                 sh '''
                 git submodule init
@@ -27,16 +26,10 @@ pipeline {
             }
         }
 
-        stage('build') {
+        stage('download profiles') {
             steps {
                 sh '''
-                echo "Github username: ${GITHUB_USERNAME}"
-                echo "Github API token: ${GITHUB_API_TOKEN}"
-                echo "Match password: ${MATCH_PASSWORD}"
-                echo "App Store Connect API Content: ${APP_STORE_CONNECT_API_CONTENT}"
-                echo "Firebase token: ${"FIREBASE_TOKEN"}
                 bundle exec fastlane download_profiles
-                bundle exec fastlane archive_internal
                 '''
             }
         }
@@ -44,7 +37,6 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
-                bundle exec fastlane download_profiles
                 bundle exec fastlane tests
                 '''
             }
@@ -57,7 +49,6 @@ pipeline {
 
             steps {
                 sh '''
-                bundle exec fastlane download_profiles
                 ./scripts/increase_build_number.sh
                 bundle exec fastlane archive_internal
                 bundle exec fastlane deploy_internal
@@ -71,7 +62,6 @@ pipeline {
             }
             steps {
                 sh '''
-                bundle exec fastlane download_profiles
                 ./scripts/increase_build_number.sh
                 bundle exec fastlane archive_appstore
                 bundle exec fastlane deploy_appstore
