@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('install') {
             steps {
-                sh 'export PATH="$HOME/.rbenv/shims:$PATH"'
+                sh 'rbenv init'
                 sh 'bundle install'
                 sh 'bundle exec pod install'
             }
