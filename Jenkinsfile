@@ -5,6 +5,7 @@ pipeline {
         https_proxy= "http://127.0.0.1:1087"
 
         CI_BUILD_NUMER = "${env.BUILD_NUMBER}"
+        PATH="~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
         GITHUB_USERNAME = credentials('github-username')
         GITHUB_API_TOKEN = credentials('github-api-token') 
@@ -15,18 +16,8 @@ pipeline {
     stages {
         stage('install') {
             steps {
-                sh '''
-                #!/bin/bash
-                export PATH=/usr/local/bin:$PATH
-                eval "$(rbenv init -)"
-                rbenv local
-                rbenv rehash
-                which bundle
-                '''
-                sh '''
-                which bundle
-                bundle install
-                '''
+                echo "${PATH}"
+                sh 'bundle install' 
                 sh 'bundle exec pod install'
             }
         }
