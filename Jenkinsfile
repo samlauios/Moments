@@ -15,6 +15,7 @@ pipeline {
     stages {
         stage('install') {
             steps {
+                sh 'export PATH="/usr/local/bin:$PATH"'
                 sh 'rbenv init'
                 sh 'bundle install'
                 sh 'bundle exec pod install'
