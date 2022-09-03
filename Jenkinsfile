@@ -23,7 +23,10 @@ pipeline {
                 rbenv rehash
                 which bundle
                 '''
-                sh 'bundle install'
+                sh '''
+                bundle install
+                which bundle
+                '''
                 sh 'bundle exec pod install'
             }
         }
