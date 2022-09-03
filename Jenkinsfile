@@ -30,6 +30,11 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
+                echo "Github username: ${GITHUB_USERNAME}"
+                echo "Github API token: ${GITHUB_API_TOKEN}"
+                echo "Match password: ${MATCH_PASSWORD}"
+                echo "App Store Connect API Content: ${APP_STORE_CONNECT_API_CONTENT}"
+                echo "Firebase token: ${"FIREBASE_TOKEN"}
                 bundle exec fastlane download_profiles
                 bundle exec fastlane archive_internal
                 '''
