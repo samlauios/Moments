@@ -18,22 +18,30 @@ pipeline {
     stages {
         stage('install') {
             steps {
-                sh 'bundle install' 
-                sh 'bundle exec pod install'
+                sh '''
+                git submodule init
+                git submodule update 
+                bundle install
+                bundle exec pod install
+                '''
             }
         }
 
         stage('build') {
             steps {
-                sh 'bundle exec fastlane download_profiles'
-                sh 'bundle exec fastlane archive_internal'
+                sh '''
+                bundle exec fastlane download_profiles
+                bundle exec fastlane archive_internal
+                '''
             }
         }
 
         stage('test') {
             steps {
-                sh 'bundle exec fastlane download_profiles'
-                sh 'bundle exec fastlane tests'
+                sh '''
+                bundle exec fastlane download_profiles
+                bundle exec fastlane tests
+                '''
             }
         }
 
@@ -43,11 +51,12 @@ pipeline {
             }
 
             steps {
-                sh 'bundle exec fastlane download_profiles'
-                sh './scripts/increase_build_number.sh'
-                sh 'bundle exec fastlane archive_internal'
-                sh 'bundle exec fastlane deploy_internal'
-
+                sh '''
+                bundle exec fastlane download_profiles
+                ./scripts/increase_build_number.sh
+                bundle exec fastlane archive_internal
+                bundle exec fastlane deploy_internal
+                '''
             }
         }
 
@@ -56,10 +65,12 @@ pipeline {
                 branch 'release'
             }
             steps {
-                sh 'bundle exec fastlane download_profiles'
-                sh './scripts/increase_build_number.sh'
-                sh 'bundle exec fastlane archive_appstore'
-                sh 'bundle exec fastlane deploy_appstore'
+                sh '''
+                bundle exec fastlane download_profiles
+                ./scripts/increase_build_number.sh
+                bundle exec fastlane archive_appstore
+                bundle exec fastlane deploy_appstore
+                '''
             }
         }
     }
