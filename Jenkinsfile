@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                export PATH=$PATH:/usr/local/bin:$HOME/.rbenv/shims
+                export PATH=$HOME/.rbenv/shims:/usr/local/bin:$PATH
                 eval "$(rbenv init -)"
                 rbenv local
                 rbenv rehash
