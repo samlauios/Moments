@@ -17,10 +17,11 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                export PATH=$HOME/.rbenv/shims:/usr/local/bin:$PATH
+                export PATH=/usr/local/bin:$PATH
                 eval "$(rbenv init -)"
                 rbenv local
                 rbenv rehash
+                which bundle
                 '''
                 sh 'bundle install'
                 sh 'bundle exec pod install'
