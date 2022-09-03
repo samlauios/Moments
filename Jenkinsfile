@@ -24,8 +24,8 @@ pipeline {
                 which bundle
                 '''
                 sh '''
-                bundle install
                 which bundle
+                bundle install
                 '''
                 sh 'bundle exec pod install'
             }
