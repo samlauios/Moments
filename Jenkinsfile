@@ -7,7 +7,7 @@ pipeline {
         LANG="en_US.UTF-8"
         PATH="~/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-        CI_BUILD_NUMER = "${env.BUILD_NUMBER}"
+        CI_BUILD_NUMBER = "${env.BUILD_NUMBER}"
 
         MATCH_GIT_BASIC_AUTHORIZATION = credentials('match_git_basic_authorization')
         MATCH_PASSWORD = credentials('match-password')
