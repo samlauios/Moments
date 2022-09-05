@@ -55,7 +55,7 @@ pipeline {
                 '''
                 mail to: 'samlaudev@gmail.com',
                      subject: 'Deploy internal app to firebase successfully',
-                     body: 'Checkout more detail to ${env.BUILD_URL}'
+                     body: "Checkout more detail to ${env.BUILD_URL}"
             }
         }
 
@@ -71,7 +71,7 @@ pipeline {
                 '''
                 mail to: 'samlaudev@gmail.com',
                      subject: 'Deploy production app to app store successfully',
-                     body: 'Checkout more detail to ${env.BUILD_URL}'
+                     body: "Checkout more detail to ${env.BUILD_URL}"
             }
         }
     }
