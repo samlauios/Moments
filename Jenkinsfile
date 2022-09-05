@@ -53,7 +53,7 @@ pipeline {
                 bundle exec fastlane archive_internal
                 bundle exec fastlane deploy_internal
                 '''
-                mail to: 'liuyaozhu13hao@163.com',
+                mail to: 'samlaudev@gmail.com',
                      subject: 'Deploy internal app to firebase successfully',
                      body: 'Checkout more detail to ${env.BUILD_URL}'
             }
@@ -69,7 +69,7 @@ pipeline {
                 bundle exec fastlane archive_appstore
                 bundle exec fastlane deploy_appstore
                 '''
-                mail to: 'liuyaozhu13hao@163.com',
+                mail to: 'samlaudev@gmail.com',
                      subject: 'Deploy production app to app store successfully',
                      body: 'Checkout more detail to ${env.BUILD_URL}'
             }
@@ -77,7 +77,7 @@ pipeline {
     }
     post {
         failure {
-            mail to: 'liuyaozhu13hao@163.com',
+            mail to: 'samlaudev@gmail.com',
                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
                  body: "Something is wrong with ${env.BUILD_URL}"
         }
