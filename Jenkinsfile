@@ -9,7 +9,7 @@ pipeline {
 
         CI_BUILD_NUMBER = "${env.BUILD_NUMBER}"
 
-        MATCH_GIT_BASIC_AUTHORIZATION = credentials('match_git_basic_authorization')
+        MATCH_GIT_BASIC_AUTHORIZATION = credentials('match-git-basic-authorization')
         MATCH_PASSWORD = credentials('match-password')
         APP_STORE_CONNECT_API_CONTENT = credentials('app-store-connect-api-content') 
         FIREBASE_TOKEN = credentials('firebase-token')
