@@ -21,6 +21,7 @@
 		8F65FD9B275626C400A29BAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9A275626C400A29BAB /* BaseViewController.swift */; };
 		8F65FD9D2756270900A29BAB /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9C2756270900A29BAB /* MomentsTimelineViewController.swift */; };
 		8F65FDA0275627DC00A29BAB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9F275627DC00A29BAB /* Strings+Generated.swift */; };
+		8FCD9ADF29669A29006B4336 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD9ADE29669A29006B4336 /* Configuration.swift */; };
 		AF8A6D3C8BEF28D7889F304A /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA036C04F54D7BB041320B66 /* Pods_MomentsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		8F65FD9A275626C400A29BAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F65FD9C2756270900A29BAB /* MomentsTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewController.swift; sourceTree = "<group>"; };
 		8F65FD9F275627DC00A29BAB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		8FCD9ADE29669A29006B4336 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CB7B0C7A16165CE9B258FDCE /* Pods_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA036C04F54D7BB041320B66 /* Pods_MomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED8B7B6B3AA1A6C0C033701 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		8F65FD952756267E00A29BAB /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				8FCD9ADD296699D6006B4336 /* Utilities */,
 				8F65FD962756269500A29BAB /* Views */,
 			);
 			path = Foundations;
@@ -282,6 +285,14 @@
 				8F5ACEB9272BACA6005D9653 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8FCD9ADD296699D6006B4336 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8FCD9ADE29669A29006B4336 /* Configuration.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F3BB6911A08B4D034CA44FDA /* Pods */ = {
@@ -556,6 +567,7 @@
 			files = (
 				8F5ACEAF272BACA5005D9653 /* AppDelegate.swift in Sources */,
 				8F65FD9B275626C400A29BAB /* BaseViewController.swift in Sources */,
+				8FCD9ADF29669A29006B4336 /* Configuration.swift in Sources */,
 				8F65FDA0275627DC00A29BAB /* Strings+Generated.swift in Sources */,
 				8F65FD912756242F00A29BAB /* main.swift in Sources */,
 				8F65FD9D2756270900A29BAB /* MomentsTimelineViewController.swift in Sources */,
