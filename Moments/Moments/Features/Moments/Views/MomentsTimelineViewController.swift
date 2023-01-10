@@ -7,19 +7,19 @@
 
 import UIKit
 import SnapKit
+import DesignKit
 
 class MomentsTimelineViewController: BaseViewController {
-    lazy var boxView: UIView = configure(.init()) {
-        $0.backgroundColor = .blue
+    lazy var favoriteButton: UIButton = configure(.init()) {
+        $0.asStarFavoriteButton(pointSize:30)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "朋友圈"
 
-        view.addSubview(boxView)
-        boxView.snp.makeConstraints { make in
-            make.width.height.equalTo(50)
+        view.addSubview(favoriteButton)
+        favoriteButton.snp.makeConstraints { make in
             make.center.equalTo(view)
         }
     }

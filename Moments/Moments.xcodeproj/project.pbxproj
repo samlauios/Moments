@@ -21,6 +21,9 @@
 		8F65FD9B275626C400A29BAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9A275626C400A29BAB /* BaseViewController.swift */; };
 		8F65FD9D2756270900A29BAB /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9C2756270900A29BAB /* MomentsTimelineViewController.swift */; };
 		8F65FDA0275627DC00A29BAB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65FD9F275627DC00A29BAB /* Strings+Generated.swift */; };
+		8F75303B296C191300CEF0BA /* TogglesDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F75303A296C191300CEF0BA /* TogglesDataStoreType.swift */; };
+		8F75303D296C1A0100CEF0BA /* BuildTargetTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F75303C296C1A0100CEF0BA /* BuildTargetTogglesDataStore.swift */; };
+		8F75303F296C1A1800CEF0BA /* InternalTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F75303E296C1A1800CEF0BA /* InternalTogglesDataStore.swift */; };
 		8FCD9ADF29669A29006B4336 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD9ADE29669A29006B4336 /* Configuration.swift */; };
 		8FCD9AE52967FE33006B4336 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD9AE42967FE33006B4336 /* Functions.swift */; };
 		AF8A6D3C8BEF28D7889F304A /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA036C04F54D7BB041320B66 /* Pods_MomentsTests.framework */; };
@@ -79,6 +82,9 @@
 		8F65FD9A275626C400A29BAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F65FD9C2756270900A29BAB /* MomentsTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewController.swift; sourceTree = "<group>"; };
 		8F65FD9F275627DC00A29BAB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		8F75303A296C191300CEF0BA /* TogglesDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglesDataStoreType.swift; sourceTree = "<group>"; };
+		8F75303C296C1A0100CEF0BA /* BuildTargetTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTargetTogglesDataStore.swift; sourceTree = "<group>"; };
+		8F75303E296C1A1800CEF0BA /* InternalTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTogglesDataStore.swift; sourceTree = "<group>"; };
 		8FCD9ADE29669A29006B4336 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		8FCD9AE42967FE33006B4336 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		CB7B0C7A16165CE9B258FDCE /* Pods_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +265,7 @@
 		8F65FD952756267E00A29BAB /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				8F753039296C18FF00CEF0BA /* Toggles */,
 				8FCD9ADD296699D6006B4336 /* Utilities */,
 				8F65FD962756269500A29BAB /* Views */,
 			);
@@ -287,6 +294,16 @@
 				8F5ACEB9272BACA6005D9653 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8F753039296C18FF00CEF0BA /* Toggles */ = {
+			isa = PBXGroup;
+			children = (
+				8F75303A296C191300CEF0BA /* TogglesDataStoreType.swift */,
+				8F75303C296C1A0100CEF0BA /* BuildTargetTogglesDataStore.swift */,
+				8F75303E296C1A1800CEF0BA /* InternalTogglesDataStore.swift */,
+			);
+			path = Toggles;
 			sourceTree = "<group>";
 		};
 		8FCD9ADD296699D6006B4336 /* Utilities */ = {
@@ -569,13 +586,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5ACEAF272BACA5005D9653 /* AppDelegate.swift in Sources */,
+				8F75303B296C191300CEF0BA /* TogglesDataStoreType.swift in Sources */,
 				8F65FD9B275626C400A29BAB /* BaseViewController.swift in Sources */,
 				8FCD9ADF29669A29006B4336 /* Configuration.swift in Sources */,
 				8FCD9AE52967FE33006B4336 /* Functions.swift in Sources */,
 				8F65FDA0275627DC00A29BAB /* Strings+Generated.swift in Sources */,
 				8F65FD912756242F00A29BAB /* main.swift in Sources */,
+				8F75303F296C1A1800CEF0BA /* InternalTogglesDataStore.swift in Sources */,
 				8F65FD9D2756270900A29BAB /* MomentsTimelineViewController.swift in Sources */,
 				8F5ACEB1272BACA5005D9653 /* SceneDelegate.swift in Sources */,
+				8F75303D296C1A0100CEF0BA /* BuildTargetTogglesDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
