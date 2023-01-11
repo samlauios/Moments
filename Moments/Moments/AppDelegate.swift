@@ -33,5 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func onLaunch() {
         FirebaseApp.configure()
+
+        // Register router
+        let appRouter: AppRouting = AppRouter.shared
+        appRouter.register(path: UniversalLink.internalMenu.rawValue, navigator: InternalMenuNavigator())
+        appRouter.register(path: UniversalLink.designKit.rawValue, navigator: DesignKitDemoNavigator())
     }
 }

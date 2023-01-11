@@ -12,6 +12,7 @@ import DesignKit
 class MomentsTimelineViewController: BaseViewController {
     lazy var favoriteButton: UIButton = configure(.init()) {
         $0.asStarFavoriteButton(pointSize:30)
+        $0.addTarget(self, action: #selector(favoriteButtonDidPress(sender:)), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -22,5 +23,12 @@ class MomentsTimelineViewController: BaseViewController {
         favoriteButton.snp.makeConstraints { make in
             make.center.equalTo(view)
         }
+    }
+}
+
+extension MomentsTimelineViewController {
+    @objc
+    func favoriteButtonDidPress(sender: UIButton) {
+        AppRouter.shared.route(to: UniversalLink.internalMenu.url(), from: self, using: .show)
     }
 }

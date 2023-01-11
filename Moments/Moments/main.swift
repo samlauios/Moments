@@ -11,5 +11,5 @@ _ = UIApplicationMain(
     CommandLine.argc,
     CommandLine.unsafeArgv,
     nil,
-    NSStringFromClass(AppDelegate.self)
+    UIApplication.shared.isRunningUnitTest ? nil : NSStringFromClass(AppDelegate.self)
 )
