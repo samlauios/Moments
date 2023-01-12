@@ -410,6 +410,7 @@
 			buildConfigurationList = 8F5ACED5272BACA6005D9653 /* Build configuration list for PBXNativeTarget "Moments" */;
 			buildPhases = (
 				98DF214169AC166E58F0FC5A /* [CP] Check Pods Manifest.lock */,
+				8F1A9984296FA9FF006F0D0B /* Run SwiftGen */,
 				8F5ACEA7272BACA5005D9653 /* Sources */,
 				8FD627B32733ADB00010FFBE /* Run Swiftlint */,
 				8F28247C274E14CE003AA93D /* Copy Firebase Config File */,
@@ -575,6 +576,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moments/Pods-Moments-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8F1A9984296FA9FF006F0D0B /* Run SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" …\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install' to install it.\"\nfi\n";
 		};
 		8F28247C274E14CE003AA93D /* Copy Firebase Config File */ = {
 			isa = PBXShellScriptBuildPhase;
