@@ -29,6 +29,6 @@ class MomentsTimelineViewController: BaseViewController {
 extension MomentsTimelineViewController {
     @objc
     func favoriteButtonDidPress(sender: UIButton) {
-        AppRouter.shared.route(to: UniversalLink.internalMenu.url(), from: self, using: .show)
+        AppRouter.shared.route(to: UniversalLink.designKit.url(parameters: ["productName": "Moments", "appVersion": "1.0.0"]), from: self, using: .show)
     }
 }

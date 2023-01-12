@@ -35,5 +35,3 @@ struct InternalTogglesDataStore: TogglesDataStoreType {
         userDefaults.set(value, forKey: toggle.rawValue)
     }
 }
-
-

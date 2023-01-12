@@ -20,6 +20,6 @@ class DesignKitDemoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Design Kit Demo"
+        title = L10n.InternalMenu.designKitDemo
     }
 }
